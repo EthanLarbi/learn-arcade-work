@@ -22,7 +22,7 @@ def main():
     arcade.start_render()
 
 
-    draw_ground()
+
     draw_window(400, 380)
     draw_window(100, 500)
     draw_window(100, 230)
