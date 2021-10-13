@@ -9,12 +9,12 @@ class Room:
         self.west = west
         self.east = east
         self.south = south
-        self.address = "123 N Cottage Grove"
+        self.address = "123 N Cottage Grove St."
 
 
 def main():
-    print("123 N Cottage Grove")
-    print("Welcome to the infamous Cottage Grove House")
+    print("123 N Cottage Grove St.")
+    print("Welcome to the infamous Cottage Grove House!")
     room_list = []
     room = 0
     # This creates the address
@@ -45,14 +45,14 @@ def main():
     room_list.append(my_room)
 
     # This creates the address
-    my_room = Room("This is the Bedroom.There is a patio to the south, and the stairs to the east",  5, None, None, 8)
+    my_room = Room("This is the Bedroom.There is a patio to the south, and the stairs to the east.",  5, None, None, 8)
     room_list.append(my_room)
 
     # This creates the address
     my_room = Room("This is the Garage. There is a patio to the north of you.", 7, None, None, None)
     room_list.append(my_room)
 
-    my_room = Room("This is the Patio. There is a garage to the south of you, and a bedroom to the north\n"
+    my_room = Room("This is the Patio. There is a garage to the south of you, and a bedroom to the north.\n"
                    "", 6, None, None, 7)
     room_list.append(my_room)
 
@@ -64,35 +64,35 @@ def main():
         userinput = input("where do you desire to go? ")
 
         if userinput.lower() == "q" or userinput.lower() == "quit":
-            print("Thank you for attempting")
+            print("Thank you for attempting!")
             break
 
         if userinput.lower() == "n" or userinput.lower() == "north":
             next_room = room_list[room].north
             if next_room is None:
                 print()
-                print("There is nothing there")
+                print("There is nothing there.")
             else:
                 room = next_room
 
         if userinput.lower() == "w" or userinput.lower() == "west":
             next_room = room_list[room].west
             if next_room is None:
-                print("There is nothing there")
+                print("There is nothing there.")
             else:
                 room = next_room
 
         if userinput.lower() == "e" or userinput.lower() == "east":
             next_room = room_list[room].east
             if next_room is None:
-                print("There is nothing there")
+                print("There is nothing there.")
             else:
                 room = next_room
 
         if userinput.lower() == "s" or userinput.lower() == "south":
             next_room = room_list[room].south
             if next_room is None:
-                print("There is nothing there")
+                print("There is nothing there.")
             else:
                 room = next_room
 
