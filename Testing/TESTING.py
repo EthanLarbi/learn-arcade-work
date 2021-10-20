@@ -1,40 +1,28 @@
-a = 4
-b = 4
-c = 6
+"""
+class
+   attributes - adjectives instance Variables
+   methods - verbs - functions
 
-# if a != b:
-#    print("A is not B")
-if a < b and a < c:
-    print("a is less than b and c")
+inheritance
+parent/child
+super-class is parent
+parent class is more generic
 
-print("This will always print because it is not indented.")
+-- kitchen is a room --
 
-print ("done")
+class -- child class or arcade.Window
+  on_mouse_motion
+  set_mouse_visible
+  on_mouse_press
 
-a = b
-b = 3
+keyboard:
+    need starting position
+    need move speed
+    need to stop when key released
+    on_key_press
+    on_key_release
 
-c = a == b
-
-print(c)
-
-
-
-
-
-
-
-
+game controller
 
 
-
-temperature = int(input("what is the temperature in Fahrenheit"))
-
-if temperature > 90:
-    print("It is hot outside")
-elif temperature > 110:
-    print("it is cold outside")
-elif temperature < 30:
-    print("it is cold outside")
-
-print("done")
+"""

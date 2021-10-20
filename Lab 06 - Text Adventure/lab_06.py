@@ -9,12 +9,11 @@ class Room:
         self.west = west
         self.east = east
         self.south = south
-        self.address = "123 N Cottage Grove St."
+
 
 
 def main():
-    print("123 N Cottage Grove St.")
-    print("Welcome to the infamous Cottage Grove House!")
+    print("Welcome to the Infamous Cottage Grove House!")
     room_list = []
     room = 0
     # This creates the address
@@ -23,17 +22,17 @@ def main():
     room_list.append(my_room)
 
     # This creates the address
-    my_room = Room("You are in the Living room. There is a Dining room to the south of you, \n"
+    my_room = Room("You are in the living room. There is a dining room to the south of you,\n"
                    "and a the entrance to the east of you.", None, 0, None, 2)
     room_list.append(my_room)
 
     # This creates the address
-    my_room = Room("You are in the Dining room. There is a living room to the north, a bathroom to the west\n"
+    my_room = Room("You are in the dining room. There is a living room to the north, a bathroom to the west\n"
                    ", and a kitchen to the south.",  1, None, 3, 2)
     room_list.append(my_room)
 
     # This creates the address
-    my_room = Room("You are in the bathroom. There is a Dining room to the east of you.",  0, 2, None, None)
+    my_room = Room("You are in the bathroom. There is a dining room to the east of you.",  0, 2, None, None)
     room_list.append(my_room)
 
     # This creates the address
@@ -45,14 +44,14 @@ def main():
     room_list.append(my_room)
 
     # This creates the address
-    my_room = Room("This is the Bedroom.There is a patio to the south, and the stairs to the east.",  5, None, None, 8)
+    my_room = Room("This is the bedroom.There is a patio to the south, and the stairs are to the east of you.",  5, None, None, 8)
     room_list.append(my_room)
 
     # This creates the address
-    my_room = Room("This is the Garage. There is a patio to the north of you.", 7, None, None, None)
+    my_room = Room("This is the garage. There is a patio to the north of you.", 7, None, None, None)
     room_list.append(my_room)
 
-    my_room = Room("This is the Patio. There is a garage to the south of you, and a bedroom to the north.\n"
+    my_room = Room("This is the patio. There is a garage to the south of you, and a bedroom to the north.\n"
                    "", 6, None, None, 7)
     room_list.append(my_room)
 
@@ -61,7 +60,7 @@ def main():
     while not done:
         print()
         print(room_list[room].name)
-        userinput = input("where do you desire to go? ")
+        userinput = input("Where do you desire to go? ")
 
         if userinput.lower() == "q" or userinput.lower() == "quit":
             print("Thank you for attempting!")
