@@ -11,8 +11,8 @@ ROW_COUNT = 10
 COLUMN_COUNT = 10
 
 # This sets the WIDTH and HEIGHT of each grid location
-WIDTH = 60
-HEIGHT = 60
+WIDTH = 30
+HEIGHT = 30
 
 # This sets the margin between each cell
 # and on the edges of the screen.
@@ -88,7 +88,7 @@ class MyGame(arcade.Window):
             if self.grid[row][column] == 0:
                 self.grid[row][column] = 1
             else:
-                self.grid[row][column] = 0
+                self.grid_[row][column] = 0
 
         active = 0
         for row in range(ROW_COUNT):
@@ -96,21 +96,25 @@ class MyGame(arcade.Window):
                 if self.grid[row][column] ==1:
                     active += 1
 
-                #THIS IS WHERE IT WENT WRONG. fix
-            if self.grid[row][column] == 1:
-                active += 1
-                continuous_count +=1
-            #issue
-        if continous_count > 2:
-            print(f"There are {continous_count} continous vlocks selected in row {row}")
+        print(f"{active} cells has been selected.")
 
-        print(f"row {row + 1} has {active} cells selected.")
+        for row in range(ROW_COUNT):
+            active = 0
+            continuous_count = 0
+            for column in range(COLUMN_COUNT):
+                if self.grid[row][column] == 1:
+                    active += 1
+                    continuous_count +=1
+
+            if continuous_count > 2:
+                print(f"There are {continuous_count} continuous blocks selected in row {row}")
+            print(f"row {row + 1} has {active} cells selected.")
         for column in range(COLUMN_COUNT):
-                active = 0
-                for row in range (ROW_COUNT):
-                    if self.grid[row][column] == 1:
-                        active += 1
-                    print(f"column {column + 1} has {active} cells selected.")
+            active = 0
+            for row in range (ROW_COUNT):
+                if self.grid[row][column] == 1:
+                    active += 1
+            print(f"column {column + 1} has {active} cells selected.")
 
 
 def main():
