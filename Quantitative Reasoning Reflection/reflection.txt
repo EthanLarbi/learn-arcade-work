@@ -1,0 +1,36 @@
+Ethan Larbi
+12/2/2022
+CMSC-150
+
+
+1. Before this class began I had no idea about how to create an image while using code. In Lab two I was allowed to draw
+a picture of a face creating an arcade window with a height and width, which gave me the desired size frame that I wanted.
+After that learned about calling arcade.draw, in order to create functions that will fit my desired
+object that I want to create. With this arcade function, I was able to insert many things such as color, shapes, etc.
+After much use with the arcade function, I was aware of how useful it was when creating images with Code.
+
+2. Communicating with a fellow programmer is extremely important, because after my experience with my first coding class
+I noticed that miscommunication with even the computer can be extremely crucial to the code you want to create. One thing
+that i would mention to my fellow programmer is for ex: right beneath import arcade, you are to always call your constant
+codes before continuing your programming. when you create new function such as COIN_COUNT = 50, that is supposed to be
+right underneath import arcade and import random. This is important because later into the program you will have to
+call the coin_count in order to add sound or create a function that will collect them. For example,(coin = arcade.Sprite
+("coin_01.png", SPRITE_SCALING_COIN)) creates the image of the coins in your code. Without this function, you will have
+an error if you try and run the code. In another perspective lets say a mother to a child is born, and the mother unfortunately
+passes away. In this situation since the biological mother has passed away, the child cannot have or "call" anyone
+their biological mother. This is the importance of calling your program.
+
+
+3. I was able to test my code by constantly running it through python, and when it would not go through, I would read
+the errors and attempt to correct them. Whenever there was an error with my code, Python had the ability to tell you what
+you missed and that gave me a better perspective on how to tackle my coding problem. I am able to know that the data
+returned is correct because at the right corner of the python screen, there is always a green check mark that
+allows you to see if your code is valid or not.
+
+
+4. The limitations of using  numerical methods is simply the fact that you can't use numbers to get everything you desire
+when it comes to code. Let's say you want to create a coin collect in your code with about 100 coins. see in this case
+without creating a function with letters and pure code, the number 100 would not be effective without code that goes along
+with it. In a real life perspective, you cannot judge students solely on test scores because some people like myself, are
+very hardworking when it comes to actual school work, but for some odd reason, testing just never works out. An individual
+can be extremely wealthy and successful, but getting straight A's was never a thing for that person growing up

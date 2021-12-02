@@ -1,86 +1,107 @@
-import random
+import arcade
 
 
-def selection_sort(my_list):
-    """ Sort a list using the selection sort """
+ROW_COUNT = 10
+COLUMN_COUNT = 10
 
-    # Loop through the entire array
-    for cur_pos in range(len(my_list)):
-        # Find the position that has the smallest number
-        # Start with the current position
-        min_pos = cur_pos
+WIDTH = 60
+HEIGHT = 60
 
-        # Scan left to right (end of the list)
-        for scan_pos in range(cur_pos + 1, len(my_list)):
+MARGIN = 10
 
-            # Is this position smallest?
-            if my_list[scan_pos] < my_list[min_pos]:
-                # It is, mark this position as the smallest
-                min_pos = scan_pos
-
-        # Swap the two values
-        temp = my_list[min_pos]
-        my_list[min_pos] = my_list[cur_pos]
-        my_list[cur_pos] = temp
+SCREEN_WIDTH = (WIDTH + MARGIN) * COLUMN_COUNT + MARGIN
+SCREEN_HEIGHT = (HEIGHT + MARGIN) * ROW_COUNT + MARGIN
 
 
-def insertion_sort(my_list):
-    """ Sort a list using the insertion sort """
+class MyGame(arcade.Window):
+    """
+    Main application class.
+    """
 
-    # Start at the second element (pos 1).
-    # Use this element to insert into the
-    # list.
-    for key_pos in range(1, len(my_list)):
+    def __init__(self, width, height):
+        """
+        Set up the application.
+        """
+        super().__init__(width, height)
 
-        # Get the value of the element to insert
-        key_value = my_list[key_pos]
+        self.grid = []
+        for row in range(ROW_COUNT):
 
-        # Scan from right to the left (start of list)
-        scan_pos = key_pos - 1
+            self.grid.append([])
+            for column in range(COLUMN_COUNT):
+                self.grid[row].append(0)
 
-        # Loop each element, moving them up until
-        # we reach the position the
-        while (scan_pos >= 0) and (my_list[scan_pos] > key_value):
-            my_list[scan_pos + 1] = my_list[scan_pos]
-            scan_pos = scan_pos - 1
+        arcade.set_background_color(arcade.color.BLACK)
 
-        # Everything's been moved out of the way, insert
-        # the key into the correct location
-        my_list[scan_pos + 1] = key_value
+    def on_draw(self):
+
+        arcade.start_render()
+
+        # Draw the grid
+        for row in range(ROW_COUNT):
+            for column in range(COLUMN_COUNT):
+                # Figure out what color to draw the box
+                if self.grid[row][column] == 1:
+                    color = arcade.color.GREEN
+                else:
+                    color = arcade.color.WHITE
 
 
-# This will point out a list
-# For more information on the print formatting {:3}
-# see the chapter on print formatting.
-def print_list(my_list):
-    for item in my_list:
-        print(f"{item:3}", end="")
-    print()
+                x = (MARGIN + WIDTH) * column + MARGIN + WIDTH // 2
+                y = (MARGIN + HEIGHT) * row + MARGIN + HEIGHT // 2
 
+
+                arcade.draw_rectangle_filled(x, y, WIDTH, HEIGHT, color)
+
+    def on_mouse_press(self, x, y, button, modifiers):
+        """
+        Called when the user presses a mouse button.
+        """
+
+
+        column = int(x // (WIDTH + MARGIN))
+        row =  int(y // (HEIGHT + MARGIN))
+
+        print(f"Click coordinates: ({x}, {y}). Grid coordinates: ({row}, {column})")
+
+
+        if row < ROW_COUNT and column < COLUMN_COUNT:
+
+
+            if self.grid[row][column] == 0:
+                self.grid[row][column] = 1
+            else:
+                self.grid[row][column] = 0
+
+            if row < (ROW_COUNT - 1):
+                if self.grid[row + 1][column] == 0:
+                    self.grid[row + 1][column] = 1
+                else:
+                    self.grid[row + 1][column] = 0
+
+            if row >= 1:
+                if self.grid[row -1][column] == 0:
+                    self.grid[row - 1][column] = 1
+                else:
+                    self.grid[row - 1][column] = 0
+
+            if column <(COLUMN_COUNT - 1):
+                if self.grid[row][column + 1] == 0:
+                    self.grid[row][column + 1] = 1
+                else:
+                    self.grid[row][column + 1] = 0
+
+            if column >= 1:
+                if self.grid[row][column - 1] == 0:
+                    self.grid[row][column - 1] = 1
+                else:
+                    self.grid[row][column - 1] = 0
 
 def main():
-    # Create two lists of the same random numbers
-    list_for_selection_sort = []
-    list_for_insertion_sort = []
-    list_size = 10
-    for i in range(list_size):
-        new_number = random.randrange(100)
-        list_for_selection_sort.append(new_number)
-        list_for_insertion_sort.append(new_number)
 
-    # Print the original list
-    print("Original List")
-    print_list(list_for_selection_sort)
-
-    # Use the selection sort and print the result
-    print("Selection Sort")
-    selection_sort(list_for_selection_sort)
-    print_list(list_for_selection_sort)
-
-    # Use the insertion sort and print the result
-    print("Insertion Sort")
-    insertion_sort(list_for_insertion_sort)
-    print_list(list_for_insertion_sort)
+    window = MyGame(SCREEN_WIDTH, SCREEN_HEIGHT)
+    arcade.run()
 
 
-main()
+if __name__ == "__main__":
+    main()
