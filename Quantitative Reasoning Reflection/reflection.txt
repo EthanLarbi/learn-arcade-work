@@ -11,7 +11,7 @@ After much use with the arcade function, I was aware of how useful it was when c
 
 2. Communicating with a fellow programmer is extremely important, because after my experience with my first coding class
 I noticed that miscommunication with even the computer can be extremely crucial to the code you want to create. One thing
-that i would mention to my fellow programmer is for ex: right beneath import arcade, you are to always call your constant
+that I would mention to my fellow programmer is for ex: right beneath import arcade, you are to always call your constant
 codes before continuing your programming. when you create new function such as COIN_COUNT = 50, that is supposed to be
 right underneath import arcade and import random. This is important because later into the program you will have to
 call the coin_count in order to add sound or create a function that will collect them. For example,(coin = arcade.Sprite
