@@ -33,4 +33,4 @@ when it comes to code. Let's say you want to create a coin collect in your code 
 without creating a function with letters and pure code, the number 100 would not be effective without code that goes along
 with it. In a real life perspective, you cannot judge students solely on test scores because some people like myself, are
 very hardworking when it comes to actual school work, but for some odd reason, testing just never works out. An individual
-can be extremely wealthy and successful, but getting straight A's was never a thing for that person growing up
+can be extremely wealthy and successful, but getting straight A's was never a thing for that person growing up.
